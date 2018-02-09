@@ -6,7 +6,7 @@
 	<groupId>com.hk</groupId>
 	<artifactId>ssm4</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>ssm4</name>
 	<description>ssm4 project for Spring Boot</description>
@@ -17,7 +17,6 @@
 		<version>1.5.9.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -58,6 +57,16 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+	    <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-devtools</artifactId>
+	        <optional>true</optional>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.webjars</groupId>
+	        <artifactId>bootstrap</artifactId>
+	        <version>3.1.0</version>
+	    </dependency>
 	</dependencies>
 
 	<build>
@@ -123,6 +132,16 @@
 	        <artifactId>sonar-maven-plugin</artifactId>
 	        <version>3.4.0.905</version>
 	      </plugin>
+	      <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<version>2.9.1</version>
+		  </plugin>
+		  <plugin>  
+		    <groupId>org.apache.maven.plugins</groupId>  
+		    <artifactId>maven-surefire-report-plugin</artifactId>  
+		    <version>2.14</version>  
+		</plugin> 
 		</plugins>
 	</build>
 
