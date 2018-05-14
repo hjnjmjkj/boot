@@ -6,9 +6,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 @SpringBootApplication
 @EnableTransactionManagement
 @ServletComponentScan
+@EnableSwagger2
 @MapperScan("com.hk.ssm4.mapper")
 public class Ssm4Application {
 
