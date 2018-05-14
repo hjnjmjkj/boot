@@ -17,7 +17,7 @@ public class Test {
 	@org.junit.Test
 	public void test() throws Exception {  
 		//会自动注册 System.getProperties() 和 System.getenv()  
-	    Environment environment = new StandardEnvironment();  
+	    Environment environment = new StandardEnvironment();   
 	    System.out.println(environment.getProperty("server.port"));  
 	    System.out.println(testService.test());
 	}  
