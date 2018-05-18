@@ -1,0 +1,25 @@
+debug: true
+logging:
+    level:
+        org:
+            springframework:
+                web: DEBUG
+mybatis:
+    config-locations: classpath:mybatis/mybatis-config.xml
+    mapper-locations: classpath:mybatis/mapper/*.xml
+    type-aliases-package: com.hk.ssm4.entity
+server:
+    port: 8866
+    tomcat:
+        uri-encoding: UTF-8
+spring:
+    datasource:
+        driverClassName: com.mysql.jdbc.Driver
+        password: root
+        url: jdbc:mysql://localhost:3306/boot?useUnicode=true&characterEncoding=utf-8
+        username: root
+    http:
+        encoding:
+            charset: UTF-8
+            enabled: true
+            force: true
