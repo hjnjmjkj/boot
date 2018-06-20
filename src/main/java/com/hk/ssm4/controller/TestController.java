@@ -18,4 +18,38 @@ public class TestController {
 		model.addAttribute("name", testService.test());
 		return "index";
 	}
+	@RequestMapping("/lock")
+	public String lock(Model model){
+		model.addAttribute("name", "lock");
+		try {
+			testService.lock();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "index";
+	}
+	@RequestMapping("/lock2")
+	public String unlock(Model model){
+		model.addAttribute("name", "lock2");
+		testService.lock2();
+		return "index";
+	}
+	@RequestMapping("/getKey")
+	public String getKey(Model model){
+		model.addAttribute("name", testService.getKey());
+		return "index";
+	}
+	@RequestMapping("/blockQueue")
+	public String blockQueue(Model model) throws InterruptedException{
+		testService.testBlockQueue();
+		model.addAttribute("name", "blockQueue");
+		return "index";
+	}
+	@RequestMapping("/redissonClientTest")
+	public String redissonClientTest(Model model) throws InterruptedException{
+		testService.redissonClientTest();
+		model.addAttribute("name", "redissonClientTest");
+		return "index";
+	}
 }

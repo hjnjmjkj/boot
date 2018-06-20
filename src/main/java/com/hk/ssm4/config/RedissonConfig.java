@@ -33,7 +33,7 @@ public class RedissonConfig {
     @Bean
     CacheManager cacheManager(RedissonClient redissonClient) {
     	Map<String, CacheConfig> config = new HashMap<String, CacheConfig>();
-        config.put("testCache", new CacheConfig(30*60*1000, 15*60*1000));
+        config.put("testMap", new CacheConfig(60000, 600000));
         return new RedissonSpringCacheManager(redissonClient, config);
     }
 }

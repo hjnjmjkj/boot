@@ -3,6 +3,7 @@ package com.hk.ssm4;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.cache.CacheManager;
 import org.springframework.core.env.Environment;
 import org.springframework.core.env.StandardEnvironment;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -14,11 +15,12 @@ import com.hk.ssm4.service.TestService;
 public class Test {
 	@Autowired
 	private TestService testService;
+	@Autowired
+	private CacheManager cacheManager;
 	@org.junit.Test
 	public void test() throws Exception {  
-		//会自动注册 System.getProperties() 和 System.getenv()  
-	    Environment environment = new StandardEnvironment();   
-	    System.out.println(environment.getProperty("server.port"));  
-	    System.out.println(testService.test());
+		System.out.println(cacheManager.getCache("testMap").get("1"));
+	    
 	}  
+	
 }
