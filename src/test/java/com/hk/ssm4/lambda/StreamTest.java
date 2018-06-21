@@ -1,4 +1,4 @@
-package com.hk.ssm4;
+package com.hk.ssm4.lambda;
 
 import java.util.ArrayList;
 import java.util.List;

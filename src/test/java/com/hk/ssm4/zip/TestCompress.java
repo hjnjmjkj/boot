@@ -1,4 +1,4 @@
-package com.hk.ssm4;
+package com.hk.ssm4.zip;
 
 import java.io.FileOutputStream;
 import java.util.List;
@@ -14,7 +14,7 @@ public class TestCompress {
         try {  
             FileOutputStream os = new FileOutputStream("e:/测试.zip"); // 输出的ZIP文件流  
             ZipUtil.compress(os, "C:/Users/davis/Desktop/temp");  
-            for (String string : list) {
+            for (String string : str) {
 				System.out.println(string);
 			}
         } catch (Exception e) {  

@@ -1,4 +1,4 @@
-package com.hk.ssm4;
+package com.hk.ssm4.Test;
 
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

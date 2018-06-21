@@ -25,8 +25,10 @@ public class RedissonConfig {
 	@Bean(destroyMethod="shutdown")
     RedissonClient redisson() throws IOException {
 		Config config = new Config();
-        config.useSingleServer().setAddress("redis://127.0.0.1:6379");
-        RedissonClient redisson = Redisson.create(config);
+        //config.useSingleServer().setAddress("redis://127.0.0.1:6379");
+		config.useMasterSlaveServers().setMasterAddress("redis://127.0.0.1:63791").addSlaveAddress("redis://127.0.0.1:63792","redis://127.0.0.1:63793");
+		//config.useSentinelServers().setMasterName("mymaster").addSentinelAddress("redis://127.0.0.1:32769", "redis://127.0.0.1:32770", "redis://127.0.0.1:32771");
+		RedissonClient redisson = Redisson.create(config);
         return redisson;
     }
 

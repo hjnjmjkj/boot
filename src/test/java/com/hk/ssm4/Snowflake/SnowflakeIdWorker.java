@@ -1,4 +1,4 @@
-package com.hk.ssm4;
+package com.hk.ssm4.Snowflake;
 
 import java.util.Date;
 
