@@ -9,6 +9,7 @@ import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.framework.recipes.locks.InterProcessMutex;
 import org.apache.curator.retry.ExponentialBackoffRetry;
+import org.apache.curator.utils.CloseableUtils;
 
 /**
  * 测试可重入锁（可以多次获得锁不会被阻塞，释放时也需释放多把锁）
@@ -76,5 +77,6 @@ public class TestCurator{
 	        countdown.countDown();*/
 	        lock.acquire();
 	        lock.release();
+	        CloseableUtils.closeQuietly(cf);
 	    }
 }
