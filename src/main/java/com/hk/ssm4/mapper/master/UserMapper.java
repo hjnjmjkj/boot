@@ -1,4 +1,4 @@
-package com.hk.ssm4.mapper;
+package com.hk.ssm4.mapper.master;
 
 import java.util.List;
 
