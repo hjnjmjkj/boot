@@ -29,7 +29,7 @@ import com.mysql.jdbc.jdbc2.optional.MysqlXADataSource;
 
 @Configuration
 @MapperScan(basePackages = {"com.hk.ssm4.mapper.master"}, sqlSessionTemplateRef = "sqlSessionTemplate")
-public class DataSourceConfig {
+public class MasterDataSourceConfig {
 	
 	@Autowired
 	Environment env;
@@ -87,38 +87,5 @@ public class DataSourceConfig {
 		return new SqlSessionTemplate(sqlSessionFactory);
 	}
 	
-	
     
-    
-    /**
-     * atomikos
-     * 配置jta事务管理器
-     */
-    @Bean(name = "transactionManager")
-    public JtaTransactionManager jtaTransactionManager () {
-        return new JtaTransactionManager(userTransaction(), userTransactionManager());
-    }
-    
-    
-    
-    /**
-     * atomikos
-     * 创建userTransaction
-     */
-    @Bean
-    public UserTransaction userTransaction(){
-    	UserTransaction userTransaction = new UserTransactionImp();
-        return userTransaction;
-    }
-    
-    /**
-     * atomikos
-     * 配置UserTransactionManager
-     */
-    @Bean(initMethod = "init", destroyMethod = "close")
-    public TransactionManager userTransactionManager(){
-        UserTransactionManager userTransactionManager = new UserTransactionManager();
-        userTransactionManager.setForceShutdown(true);//事务强制关闭
-        return userTransactionManager;
-    }
 }

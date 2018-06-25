@@ -9,13 +9,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import com.hk.ssm4.config.DataSourceConfig;
+import com.hk.ssm4.config.MasterDataSourceConfig;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @ServletComponentScan
-@EnableTransactionManagement
 public class Ssm4Application {
 
 	public static void main(String[] args) {
