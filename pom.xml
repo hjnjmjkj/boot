@@ -209,6 +209,11 @@
 		    <artifactId>spring-kafka</artifactId>
 		    <version>1.2.2.RELEASE</version>
 		</dependency>
+		<dependency>
+		   <groupId>com.github.xiaoymin</groupId>
+		   <artifactId>swagger-bootstrap-ui</artifactId>
+		   <version>1.7.3</version>
+		</dependency>
 	</dependencies>
 
 	<build>
