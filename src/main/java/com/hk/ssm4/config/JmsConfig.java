@@ -14,7 +14,7 @@ import org.springframework.jms.core.JmsTemplate;
 import org.springframework.transaction.jta.JtaTransactionManager;
 
 
-@Configuration
+//@Configuration
 public class JmsConfig {
 	@Bean(name="amqXaConnectionFactory")
 	public ActiveMQXAConnectionFactory getActiveMQXAConnectionFactory(){

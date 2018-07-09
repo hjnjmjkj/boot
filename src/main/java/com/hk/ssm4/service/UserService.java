@@ -23,7 +23,7 @@ public class UserService {
 	private com.hk.ssm4.mapper.salve.UserMapperSalve salveUser;
 	@Autowired
 	private JmsTemplate jmsTemplate;
-	@Resource(name="activeMQQueue")
+	//@Resource(name="activeMQQueue")
 	private Destination destination;
 	@Transactional
 	public void userInsert(){
