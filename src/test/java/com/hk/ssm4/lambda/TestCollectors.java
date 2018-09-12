@@ -29,6 +29,24 @@ public class TestCollectors {
                 new Users(4, "赵六", 18));
 
     }
+    
+    @Test
+    public void testReduce(){
+    	List<Integer> numList=new ArrayList<>();
+    	numList.add(1);
+    	numList.add(2);
+    	numList.add(3);
+        // 所有整数累加和
+        Integer reduce = numList.stream()
+                                .reduce(0, Integer::sum);
+        System.out.println(reduce);
+
+        // 所有薪资累加和
+        Optional<Integer> reduce2 = users.stream()
+        .map(Users::getAge)
+        .reduce(Integer::sum);
+        System.out.println("\n"+reduce2.get());
+    }
     @Test
     public void groupingBy() {
         users.stream().collect(Collectors.groupingBy(Users::getAge)).forEach((key, value) -> {
@@ -98,6 +116,7 @@ public class TestCollectors {
         });
 
     }
+    
 
 
     
