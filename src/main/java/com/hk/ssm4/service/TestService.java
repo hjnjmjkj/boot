@@ -34,6 +34,7 @@ public class TestService {
 		RLock lock = redissonClient.getLock("anyLock");
 		// Most familiar locking method
 		lock.lock();
+		
 		lock.unlock();
 	}
 	public void redissonClientTest(){
